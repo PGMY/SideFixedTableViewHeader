@@ -71,7 +71,6 @@ class ViewController: UITableViewController {
             header = SideFixedTableViewHeader(frame: CGRectZero)
         }
         header?.label?.text = String(section)
-        println(" [\(section)]>>>> \(header?.frame.origin.x)")
         return header
     }
     
@@ -92,7 +91,6 @@ class ViewController: UITableViewController {
         
         if ( section < 0 || section > 10 ) { return }
         var d = offset - Double(scrollView.contentOffset.y)
-        println("[\(section)]D == \(d)")
         var header:SideFixedTableViewHeader? = tableView.headerViewForSection(section) as? SideFixedTableViewHeader
         var sf = scrollView.frame
         if ( scrollView.contentOffset.y <= 0 ) {
